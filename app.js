@@ -36,7 +36,6 @@ const showImages = (images) => {
 }
 
 
-
 const getImages = (query) => {
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo`)
     .then(response => response.json())
@@ -46,10 +45,8 @@ const getImages = (query) => {
 }
 
 
-
-
 let slideIndex = 0;
-let isTrueValue=true;
+
 const selectItem = (event, img) => {
   let element = event.target;
   element.classList.add('added');
@@ -109,7 +106,6 @@ const createSlider = () => {
   })
 
 
-
   changeSlide(0)
   timer = setInterval(function () {
     slideIndex++;
@@ -117,7 +113,6 @@ const createSlider = () => {
   }, duration);
  
 }
-
 
 // change slider index 
 const changeItem = index => {
@@ -146,10 +141,6 @@ const changeSlide = (index) => {
   items[index].style.display = "block"
 
 }
-
-
-
-
 
 const slideShow=()=>{
   document.querySelector('.main').style.display = 'none';
@@ -182,9 +173,6 @@ const setValueBlock=()=>{
 
  });
 
-
-
-
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
@@ -200,20 +188,17 @@ input.addEventListener("keyup", function(event) {
   }
 });
 
-
-
-///
+//create slider event
 sliderBtn.addEventListener('click', function () {
   if(document.getElementById('doration').value<0){
     alert('duration time must be at least 1000ms')
   }else{
   setValueBlock()
   createSlider()
+  previewSlides(sliders);
   }
 })
 
-
-//
 
 document.getElementById('pause').addEventListener('click',()=>{
   clearTimeout(timer)
@@ -230,8 +215,7 @@ document.getElementById('resume').addEventListener('click',()=>{
   timeValue=document.getElementById('doration').value || 1000;
 })
 
-
-
+//back-button event
 document.getElementById('back').addEventListener('click',()=>{
   document.getElementById('buttonsDiv').style.display='none'
   document.getElementById('sliderShow').style.display='none'
@@ -239,4 +223,17 @@ document.getElementById('back').addEventListener('click',()=>{
   slideShow()
   clearTimeout(timer)
   
+})
+
+
+
+//preview
+let slidesList=[];
+const previewSlides=(createdSlide)=>{ 
+  slidesList.push(createdSlide);
+  console.log(slidesList)
+}
+
+document.getElementById('previous').addEventListener('click',()=>{
+    
 })
