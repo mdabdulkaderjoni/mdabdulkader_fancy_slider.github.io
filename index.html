@@ -20,10 +20,11 @@
     <h4 class="mt-2 text-center">Search Image for create slider</h4>
     <div class="form-inline mt-3 d-flex justify-content-center">
       <div class="input-group col-md-6 mb-2">
-        <input type="text" class="form-control" id="search" placeholder="nature">
+        <input type="text" class="form-control" id="search" placeholder="nature" value=''>
       </div>
       <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
     </div>
+    <main id="main">
     <section class="images">
       <div class="justify-content-around align-items-center mt-3 gallery-header mb-2">
         <h3 class="head-title text-center">Select image for create slider</h3>
@@ -37,16 +38,26 @@
       </div>
     </section>
     <!-- slider -->
-    <div class="main">
+    <div class="main" id="sliderShow">
       <section class="mt-5" id="sliders">
-
+        
       </section>
       <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center bg-light">
         <span class="dot" onclick="changeItem(-1)"></span>
         <span class="dot" onclick="changeItem(1)"></span>
       </div>
     </div>
+  </main>
   </div>
+
+  <div id="buttonsDiv">
+    
+    <button type="button" id="pause" class="btn btn-dark">Pause</button>
+    <button type="button" id="resume" class="btn btn-success">Resume</button>
+    <button type="button" id="back" class="btn btn-danger">Back</button>
+  
+    </div>
+
   <!-- Optional JavaScript -->
   <script src="./app.js"></script>
 </body>

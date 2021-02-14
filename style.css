@@ -19,7 +19,7 @@
 }
 
 .added {
-  border: 2px solid #1e1743;
+  border: 2px solid #1e1743; 
   border-radius: 5px;
 }
 
@@ -55,6 +55,13 @@ img {
   display: none;
 }
 
+#buttonsDiv{
+  position: absolute;
+  top:570px;
+  left:42%;
+  padding-right: 10px;
+  display: none;
+}
 @media (max-width: 767px) {
   .justify-content-around.align-items-center.mt-3.gallery-header.mb-2 {
     flex-direction: column;
