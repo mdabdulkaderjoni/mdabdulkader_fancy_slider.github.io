@@ -193,7 +193,7 @@ input.addEventListener("keyup", function(event) {
 //create slider event
 sliderBtn.addEventListener('click', function () {
   if(document.getElementById('doration').value<0){
-    alert('duration time must be at least 1000ms')
+    alert('duration time cannot be negative')
   }else{
   setValueBlock()
   createSlider()
@@ -201,12 +201,13 @@ sliderBtn.addEventListener('click', function () {
   }
 })
 
-
+//pause button event
 document.getElementById('pause').addEventListener('click',()=>{
   clearTimeout(timer)
   
 })
 
+//resume button event
 document.getElementById('resume').addEventListener('click',()=>{
   clearTimeout(timer)
   let timeValue=document.getElementById('doration').value || 1000;
