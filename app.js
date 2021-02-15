@@ -160,6 +160,7 @@ const setValueBlock=()=>{
 }
 
  searchBtn.addEventListener('click', function () {
+  document.getElementById('buttomHeader').style.display='none'
   document.getElementById('buttonsDiv').style.display='none'
      
      if(search.value!==''){
@@ -174,6 +175,7 @@ const setValueBlock=()=>{
  });
 
 input.addEventListener("keyup", function(event) {
+  document.getElementById('buttomHeader').style.display='none'
   if (event.keyCode === 13) {
    event.preventDefault();
    document.getElementById('buttonsDiv').style.display='none'
@@ -195,7 +197,7 @@ sliderBtn.addEventListener('click', function () {
   }else{
   setValueBlock()
   createSlider()
-  previewSlides(sliders);
+  
   }
 })
 
@@ -227,13 +229,26 @@ document.getElementById('back').addEventListener('click',()=>{
 
 
 
-//preview
-let slidesList=[];
-const previewSlides=(createdSlide)=>{ 
-  slidesList.push(createdSlide);
-  console.log(slidesList)
+document.getElementById('history').addEventListener('click',()=>{
+  clearTimeout(timer)
+  imagesArea.style.display = 'none';
+  document.getElementById('buttonsDiv').style.display='none'
+  document.getElementById('buttomHeader').style.display='block'
+  document.getElementById('sliderShow').style.display='block'
+
+resetTimer()
+
+})
+
+const resetTimer=()=>{
+
+  clearTimeout(timer)
+let timeValue=document.getElementById('doration').value || 1000;
+timer = setInterval(function () {   
+  slideIndex++;
+  changeSlide(slideIndex);
+}, timeValue);
+timeValue=document.getElementById('doration').value || 1000;
 }
 
-document.getElementById('previous').addEventListener('click',()=>{
-    
-})
+

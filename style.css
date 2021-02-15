@@ -65,6 +65,16 @@ img {
 #history{
   margin-left: 10px;
 }
+#collection{
+  display: none;
+}
+#buttomHeader{
+  position: absolute;
+  width: 250px;
+  left: 45%;
+  top: 570px;
+  display: none;
+}
 @media (max-width: 767px) {
   .justify-content-around.align-items-center.mt-3.gallery-header.mb-2 {
     flex-direction: column;
