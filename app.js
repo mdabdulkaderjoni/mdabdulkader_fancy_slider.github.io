@@ -170,6 +170,7 @@ const setValueBlock=()=>{
     }
     else{
       document.getElementById('main').style.display='none'
+      alert('Input field is empty. Please type something')
     }
 
  });
@@ -191,13 +192,14 @@ input.addEventListener("keyup", function(event) {
 });
 
 //create slider event
+let counter=0;
 sliderBtn.addEventListener('click', function () {
   if(document.getElementById('doration').value<0){
     alert('duration time cannot be negative')
   }else{
   setValueBlock()
   createSlider()
-  
+  counter++;
   }
 })
 
@@ -229,16 +231,21 @@ document.getElementById('back').addEventListener('click',()=>{
 })
 
 
+//preview event
 
 document.getElementById('history').addEventListener('click',()=>{
+  if(counter==0){
+    alert('Create slider to see previous');
+  }else{
   clearTimeout(timer)
   imagesArea.style.display = 'none';
   document.getElementById('buttonsDiv').style.display='none'
   document.getElementById('buttomHeader').style.display='block'
   document.getElementById('sliderShow').style.display='block'
 
-resetTimer()
-
+  resetTimer()
+  
+  }
 })
 
 const resetTimer=()=>{
